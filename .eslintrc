@@ -1,0 +1,9 @@
+{
+  "extends": ["airbnb"],
+  "quotes": [2, "single", "avoid-escape"],
+  "env": {
+    "meteor": true,
+    "node": true,
+    "mocha": true
+  }
+}
