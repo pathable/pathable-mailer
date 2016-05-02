@@ -5,5 +5,15 @@
     "meteor": true,
     "node": true,
     "mocha": true
+  },
+  "rules": {
+    "react/prefer-es6-class": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   }
 }
