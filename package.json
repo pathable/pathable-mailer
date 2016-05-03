@@ -6,8 +6,10 @@
     "test": "meteor test --driver-package avital:mocha --port 4003"
   },
   "dependencies": {
+    "chai": "^3.5.0",
     "dotenv": "^2.0.0",
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "sinon": "^1.17.4"
   },
   "devDependencies": {
     "eslint": "^2.9.0",

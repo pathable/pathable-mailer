@@ -1,6 +1,6 @@
 import { check } from 'meteor/check';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import * as userMailers from './mailers/user.js';
+import * as userMailers from './mailers/users.js';
 
 export const passwordResetSchema = new SimpleSchema({
   userId: {

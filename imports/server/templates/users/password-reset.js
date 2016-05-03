@@ -1,5 +1,5 @@
 export default {
-  path: 'users/password-reset.html',
+  path: '/users/password-reset.html',
   helpers: {
     preview: () => ('This email was sent to you because you requested to reset your password.'),
     pathableAppUrl() {
