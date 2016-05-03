@@ -1,5 +1,5 @@
 import { send } from './methods.js';
-import { assert, expect } from 'chai';
+import { expect } from 'chai';
 import { spy } from 'sinon';
 
 import * as mailMethods from '/imports/server/mail-methods.js';
