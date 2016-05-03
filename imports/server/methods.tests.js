@@ -15,7 +15,6 @@ describe('methods', () => {
     });
 
     describe('Valid Params', () => {
-
       it('calls a mail method that matches mailMethod param', () => {
         const params = { foo: 'bar' };
         const callback = spy();
