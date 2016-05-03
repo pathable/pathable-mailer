@@ -11,6 +11,7 @@ export const send = new ValidatedMethod({
     params: {
       type: Object,
       optional: true,
+      blackbox: true,
     },
   }).validator(),
 
