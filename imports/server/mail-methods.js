@@ -1,5 +1,9 @@
 import { check } from 'meteor/check';
+import { Random } from 'meteor/random';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+import { Users } from 'meteor/pathable-collections';
+
 import * as userMailers from './mailers/users.js';
 
 export const passwordResetSchema = new SimpleSchema({
@@ -20,9 +24,12 @@ export function passwordReset(params) {
   check(params, passwordResetSchema);
 
   const { userId } = params;
-  const user = Meteor.users.findOne(userId);
+  const user = Users.findOne(userId);
   const token = Random.secret();
-  const resetData = { token };
+  const resetData = {
+    token,
+    createdAt: Date.now(),
+  };
 
   if (!user) {
     // Should we throw this or exit silently?
@@ -32,8 +39,7 @@ export function passwordReset(params) {
   const email = user.emails[0].address;
 
   Meteor.users.update(userId, { $set: {
-    passwordReset: resetData,
-    createdAt: Date.now(),
+    'services.password.reset': resetData,
   } });
 
   userMailers.passwordReset(email, token);
