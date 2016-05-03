@@ -1,19 +1,20 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Mailer } from 'meteor/lookback:emails';
+
+import * as mailMethods from '/imports/server/mail-methods.js';
 
 export const send = new ValidatedMethod({
   name: 'send',
 
   validate: new SimpleSchema({
-    mail: { type: String },
+    mailMethod: { type: String },
     params: {
       type: Object,
       optional: true,
     },
   }).validator(),
 
-  run({ subject, to, template }) {
-    Mailer.send({ subject, to, template });
+  run({ mailMethod, params }) {
+    mailMethods[mailMethod](params);
   },
 });

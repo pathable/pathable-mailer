@@ -2,10 +2,11 @@
   "name": "pathable-mailer",
   "private": true,
   "scripts": {
-    "start": "meteor run  --port 3003",
+    "start": "meteor run  --port 3003 --settings development-settings.json",
     "test": "meteor test --driver-package avital:mocha --port 4003"
   },
   "dependencies": {
+    "dotenv": "^2.0.0",
     "meteor-node-stubs": "~0.2.0"
   },
   "devDependencies": {
