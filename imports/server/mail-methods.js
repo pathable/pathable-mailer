@@ -39,7 +39,7 @@ export function passwordReset(params) {
   const email = user.emails[0].address;
 
   Meteor.users.update(userId, { $set: {
-    'services.password.reset': resetData,
+    'services.pathable.passwordResetToken': resetData,
   } });
 
   userMailers.passwordReset(email, token);
