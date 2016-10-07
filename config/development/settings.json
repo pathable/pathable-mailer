@@ -1,3 +1,5 @@
 {
-  "pathableAppUrl": "http://localhost:3000"
+  "emailDefaults": {
+    "fromEmail": "info@pathable.com"
+  }
 }

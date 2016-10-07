@@ -1,0 +1,20 @@
+<mjml>
+  <mj-body>
+    <mj-container>
+      <mj-section>
+        <mj-column>
+          <mj-text
+            font-style="italic"
+            font-size="20"
+            font-family="Helvetica Neue"
+            color="#626262"
+          >Welcome to Pathable vNext {{ firstName }} {{ lastName }}!</mj-text>
+          <mj-text>You can always login to your community here:</mj-text>
+          <mj-button href="{{ authUrl }}">
+            Login to my community
+          </mj-button>
+        </mj-column>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>

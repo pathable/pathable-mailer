@@ -1,8 +1,17 @@
-import { Mailer } from 'meteor/lookback:emails';
+import MailTemplate from '/imports/server/templates/template';
 
-export function passwordReset(to, token) {
-  const subject = 'Password reset';
-  const template = 'usersPasswordReset';
+const passwordReset = ({ authUrl }) => {
+  const template = new MailTemplate('templates/accounts/password-reset.mjml');
+  template.compile();
 
-  Mailer.send({ subject, to, template, data: { token } });
-}
+  return template.render({ authUrl });
+};
+
+const communityWelcome = ({ firstName, lastName, authUrl }) => {
+  const template = new MailTemplate('templates/accounts/welcome.mjml');
+  template.compile();
+
+  return template.render({ firstName, lastName, authUrl });
+};
+
+export { communityWelcome, passwordReset };
