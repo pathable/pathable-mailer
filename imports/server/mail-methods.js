@@ -1,15 +1,30 @@
-import { check } from 'meteor/check';
-import { Random } from 'meteor/random';
+import { Email } from 'meteor/email';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { CommunityId as communityIdSchema, UserId as userIdSchema } from 'meteor/pathable-schema';
 
-import { Users } from 'meteor/pathable-collections';
+import { authorizedUserParamBuilder } from './templates/param-builders';
+import userMailers from './mailers/users.js';
 
-import * as userMailers from './mailers/users.js';
+/**
+ * A method to change a users password.
+ */
+const communityWelcome = new ValidatedMethod({
+  name: 'communityWelcome',
+  validate: new SimpleSchema([userIdSchema, communityIdSchema]).validator(),
 
-export const passwordResetSchema = new SimpleSchema({
-  userId: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id,
+  run({ userId, communityId }) {
+    const {
+      from,
+      to,
+      firstName,
+      lastName,
+      authUrl,
+    } = authorizedUserParamBuilder(userId, communityId);
+
+    const html = userMailers.communityWelcome({ firstName, lastName, authUrl });
+
+    Email.send({ to, from, html });
   },
 });
 
@@ -19,28 +34,21 @@ export const passwordResetSchema = new SimpleSchema({
  * @param {Object} params Parameters object
  * @param {String} params.userId Id of the user to which we send the email
  */
-export function passwordReset(params) {
-  // TODO: Need to implement expiry logic here
-  check(params, passwordResetSchema);
+const passwordReset = new ValidatedMethod({
+  name: 'passwordReset',
+  validate: new SimpleSchema([userIdSchema, communityIdSchema]).validator(),
 
-  const { userId } = params;
-  const user = Users.findOne(userId);
-  const token = Random.secret();
-  const resetData = {
-    token,
-    createdAt: Date.now(),
-  };
+  run({ userId, communityId }) {
+    const {
+      from,
+      to,
+      authUrl,
+    } = authorizedUserParamBuilder(userId, communityId);
 
-  if (!user) {
-    // Should we throw this or exit silently?
-    throw new Error('User does not exist');
-  }
+    const html = userMailers.passwordReset({ authUrl });
+    Email.send({ to, from, html });
+  },
+});
 
-  const email = user.emails[0].address;
+export const mailMethods = { communityWelcome, passwordReset };
 
-  Meteor.users.update(userId, { $set: {
-    'services.pathable.passwordResetToken': resetData,
-  } });
-
-  userMailers.passwordReset(email, token);
-}

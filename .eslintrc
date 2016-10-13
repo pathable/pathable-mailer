@@ -1,6 +1,9 @@
 {
   "extends": ["airbnb"],
   "quotes": [2, "single", "avoid-escape"],
+  "plugins": [
+    "meteor"
+  ],
   "env": {
     "meteor": true,
     "node": true,
@@ -10,10 +13,6 @@
     "react/prefer-es6-class": 0
   },
   "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
+    "ecmaVersion": 6
   }
 }

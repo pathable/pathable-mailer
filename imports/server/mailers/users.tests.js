@@ -1,38 +1,24 @@
 import { expect } from 'chai';
-import { Mailer } from 'meteor/lookback:emails';
-import { spy, match } from 'sinon';
+import chai from 'chai';
+import sinonChai from 'sinon-chai';
 
-import '/imports/server/startup';
 import * as userMailer from '/imports/server/mailers/users';
+
+chai.should();
+chai.use(sinonChai);
 
 describe('Mailers', () => {
   describe('User Mailer', () => {
-    describe('.passwordReset', () => {
-      let mailerSendSpy;
+    describe('communityWelcome', () => {
+      it('generates mail HTML', () => {
+        const firstName = 'firstName';
+        const lastName = 'lastName';
+        const authUrl = 'fake-token';
 
-      beforeEach(() => {
-        mailerSendSpy = spy(Mailer, 'send');
-      });
+        const results = userMailer.communityWelcome({ firstName, lastName, authUrl });
 
-      afterEach(() => {
-        mailerSendSpy.restore();
-      });
-
-      it('calls Mailer.send with the right parameters', () => {
-        const to = 'foo@bar.com';
-        const token = 'fake-token';
-        const template = 'usersPasswordReset';
-
-        userMailer.passwordReset(to, token);
-
-        expect(
-          mailerSendSpy.calledWith({
-            subject: match.string,
-            to,
-            template,
-            data: { token },
-          })
-        ).to.eql(true);
+        expect(results).to.have.string(`<a href="${authUrl}"`).
+          and.have.string(`${firstName} ${lastName}`);
       });
     });
   });

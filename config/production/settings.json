@@ -1,0 +1,14 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://galaxy:galaxy@aws-us-east-1-portal.22.dblayer.com:10291/pathable",
+      "MONGO_OPLOG_URL": "mongodb://oploguser:6sZjG-Mz6e4Gm-kkueil-lqd_t7Ppqj-cBjbzsQiDZE@haproxy290.aws-us-east-1-portal.21.dblayer.com:10290/local?authSource=admin&ssl=true",
+      "ROOT_URL": "http://admin.ptbl.co"
+    }
+  },
+  "public": {
+    "appHost": "pathable.meteorapp.com",
+    "adminHost": "admin.ptbl.co",
+    "filepickerKey": "ARv6lIAZ0QNi4ldM9AEXwz"
+  }
+}

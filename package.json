@@ -2,20 +2,24 @@
   "name": "pathable-mailer",
   "private": true,
   "scripts": {
-    "start": "meteor run  --port 3003 --settings config/development/settings.json",
-    "test": "meteor test --driver-package avital:mocha --port 4003"
+    "start": "./start",
+    "test": "./start test",
+    "lint": "eslint . --ext js,jsx",
+    "pretest": "npm run lint --silent"
   },
   "dependencies": {
-    "chai": "^3.5.0",
     "dotenv": "^2.0.0",
     "meteor-node-stubs": "~0.2.0",
-    "sinon": "^1.17.4"
+    "mjml": "^2.3.3"
   },
   "devDependencies": {
-    "eslint": "^2.9.0",
-    "eslint-config-airbnb": "^8.0.0",
-    "eslint-plugin-import": "^1.6.1",
-    "eslint-plugin-jsx-a11y": "^1.0.4",
-    "eslint-plugin-react": "^5.0.1"
+    "chai": "^3.5.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-import": "^1.5.0",
+    "eslint-plugin-meteor": "3.0.1",
+    "eslint-plugin-react": "^4.3.0",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0"
   }
 }

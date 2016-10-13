@@ -1,0 +1,28 @@
+#!/bin/bash -e
+
+. ".script"
+
+runner=${1-development}
+
+# development and test configurations available
+if [[ $runner == *"test"* ]]; then
+  environment="test"
+else
+  environment="development"
+fi
+
+load_env "config/.env"
+load_env "config/$environment/.env"
+
+if [ $runner = "test" ]; then
+  meteor test --settings config/$environment/settings.json \
+    --driver-package dispatch:mocha-browser ./ \
+    --port $PORT &
+else
+  meteor run --settings config/$environment/settings.json \
+    --port $PORT &
+fi
+
+# wait until done then kill anything started here
+wait
+trap 'kill $(jobs -p)' SIGINT SIGTERM
