@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+npm install https://github.com/pathable/pathable-scripts.git
