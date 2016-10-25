@@ -8,7 +8,7 @@
             font-size="20"
             font-family="Helvetica Neue"
             color="#626262"
-          >Welcome to Pathable vNext {{ firstName }} {{ lastName }}!</mj-text>
+          >Welcome to Pathable vNext!</mj-text>
           <mj-text>You can always login to your community here:</mj-text>
           <mj-button href="{{ authUrl }}">
             Login to my community
