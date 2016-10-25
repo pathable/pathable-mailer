@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
 
-import * as userMailer from '/imports/server/mailers/users';
+import * as userMailer from './users';
 
 chai.should();
 chai.use(sinonChai);

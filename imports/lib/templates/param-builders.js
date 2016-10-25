@@ -15,7 +15,7 @@ export const authorizedUserParamBuilder = (userId, communityId) => {
   const { firstName, lastName } = person;
 
   const token = Users.createLoginToken(userId);
-  const authUrl = createAuthorizedUrl(community.adminHost(), { token });
+  const authUrl = createAuthorizedUrl(community.adminHost(), token);
 
   return { from, to, firstName, lastName, authUrl };
 };

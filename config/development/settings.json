@@ -1,5 +1,9 @@
 {
   "emailDefaults": {
     "fromEmail": "info@pathable.com"
+  },
+  "public": {
+    "appHost": "pathable.dev:3001",
+    "adminHost": "admin.pathable.dev:3000"
   }
 }

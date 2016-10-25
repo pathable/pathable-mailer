@@ -1,1 +1,1 @@
-import '/imports/server/startup';
+import '/imports/startup/server';

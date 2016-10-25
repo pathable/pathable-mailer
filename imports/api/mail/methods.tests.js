@@ -3,7 +3,7 @@ import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import { Random } from 'meteor/random';
 
-import { mailMethods } from './mail-methods';
+import { mailMethods } from './methods';
 
 chai.should();
 chai.use(sinonChai);

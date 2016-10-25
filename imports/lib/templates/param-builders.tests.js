@@ -26,7 +26,7 @@ describe('Mail Methods', () => {
       }).to.throw('Community could not be found');
     });
 
-    describe('getting details', () => {
+    describe('building params', () => {
       beforeEach(() => {
         stub(Users, 'findOne', () => ({
           _id: Random.id(),
@@ -46,7 +46,7 @@ describe('Mail Methods', () => {
         }).to.throw('No person with the provided userId or communityId could be found');
       });
 
-      describe('with valid params', () => {
+      describe('with valid options', () => {
         beforeEach(() => {
           stub(Users, 'createLoginToken', () => authToken);
           stub(People, 'findOne', () => ({ firstName, lastName }));
@@ -57,7 +57,7 @@ describe('Mail Methods', () => {
           People.findOne.restore();
         });
 
-        it('gets user details and auth url', () => {
+        it('gets user first name, last name and auth url', () => {
           const results = authorizedUserParamBuilder(methodParams);
 
           results.should.have.property('authUrl', authUrl);
