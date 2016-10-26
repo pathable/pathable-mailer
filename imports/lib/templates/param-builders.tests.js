@@ -20,7 +20,7 @@ describe('Mail Methods', () => {
     const adminHost = 'test.pathable.dev';
     const authUrl = `//${adminHost}?authToken=${authToken}`;
 
-    it('throws an error on missing user', () => {
+    it('throws an error on missing community', () => {
       expect(() => {
         authorizedUserParamBuilder({});
       }).to.throw('Community could not be found');

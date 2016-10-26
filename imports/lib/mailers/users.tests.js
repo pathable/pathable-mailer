@@ -11,14 +11,11 @@ describe('Mailers', () => {
   describe('User Mailer', () => {
     describe('communityWelcome', () => {
       it('generates mail HTML', () => {
-        const firstName = 'firstName';
-        const lastName = 'lastName';
         const authUrl = 'fake-token';
 
-        const results = userMailer.communityWelcome({ firstName, lastName, authUrl });
+        const results = userMailer.communityWelcome({ authUrl });
 
-        expect(results).to.have.string(`<a href="${authUrl}"`).
-          and.have.string(`${firstName} ${lastName}`);
+        expect(results).to.have.string(`<a href="${authUrl}"`);
       });
     });
   });
