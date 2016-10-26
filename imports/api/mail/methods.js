@@ -35,7 +35,7 @@ const communityWelcome = new ValidatedMethod({
 });
 
 /**
- * Sends a password recovery email to a user
+ * Sends a password recovery email to a user with auth link
  *
  * @param {Object} params Parameters object
  * @param {String} params.userId Id of the user to which we send the email
