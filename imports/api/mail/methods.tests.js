@@ -20,4 +20,16 @@ describe('Mail Methods', () => {
       });
     });
   });
+
+  describe('.passwordReset', () => {
+    describe('user does not exist', () => {
+      const params = { userId: Random.id(), communityId: Random.id() };
+
+      it('throwsx an error', () => {
+        expect(() => {
+          mailMethods.passwordReset.run(params);
+        }).to.throw('User does not exist');
+      });
+    });
+  });
 });

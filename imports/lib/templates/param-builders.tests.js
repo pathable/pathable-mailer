@@ -14,11 +14,11 @@ describe('Mail Methods', () => {
   describe('authorizedUserParamBuilder', () => {
     const methodParams = { userId: Random.id(), communityId: Random.id() };
     const email = 'some@mail.com';
-    const authToken = 'some-token';
+    const authToken = { token: 'some-token' };
     const firstName = 'firstName';
     const lastName = 'lastName';
     const adminHost = 'test.pathable.dev';
-    const authUrl = `//${adminHost}?authToken=${authToken}`;
+    const authUrl = `//${adminHost}?authToken=${authToken.token}`;
 
     it('throws an error on missing community', () => {
       expect(() => {
@@ -32,6 +32,7 @@ describe('Mail Methods', () => {
           _id: Random.id(),
           emails: [{ address: email }],
         }));
+
         stub(Communities, 'findOne', () => ({ adminHost: () => adminHost }));
       });
 

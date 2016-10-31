@@ -12,9 +12,14 @@ describe('Mailers', () => {
     describe('communityWelcome', () => {
       it('generates mail HTML', () => {
         const authUrl = 'fake-token';
-
         const results = userMailer.communityWelcome({ authUrl });
-
+        expect(results).to.have.string(`<a href="${authUrl}"`);
+      });
+    });
+    describe('passwordReset', () => {
+      it('generates mail HTML', () => {
+        const authUrl = 'fake-token';
+        const results = userMailer.passwordReset({ authUrl });
         expect(results).to.have.string(`<a href="${authUrl}"`);
       });
     });

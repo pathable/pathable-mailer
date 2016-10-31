@@ -7,7 +7,7 @@ export const authorizedUserParamBuilder = (userId, communityId) => {
   const person = People.findOne({ userId, 'memberships.communityId': communityId });
 
   if (!user) throw new Error('User does not exist');
-  if (!community) throw new Error('Community could not be found');
+  if (!community) throw new Error('Community could not be found ');
   if (!person) throw new Error('No person with the provided userId or communityId could be found');
 
   const { from } = Meteor.settings.emailDefaults;
