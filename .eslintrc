@@ -12,6 +12,7 @@
   "rules": {
     "react/prefer-es6-class": 0
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6
   }
