@@ -30,6 +30,7 @@
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
     "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "pathable-scripts": "https://github.com/pathable/pathable-scripts.git"
   }
 }
