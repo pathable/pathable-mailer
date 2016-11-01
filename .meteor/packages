@@ -19,6 +19,7 @@ mdg:validated-method
 aldeed:simple-schema
 avital:mocha
 dispatch:mocha-browser
+dispatch:mocha-phantomjs
 meteorhacks:cluster
 meteorhacks:ssr
 
