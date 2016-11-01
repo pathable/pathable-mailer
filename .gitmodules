@@ -4,3 +4,6 @@
 [submodule "packages/pathable-schema"]
 	path = packages/pathable-schema
 	url = https://github.com/pathable/pathable-schema.git
+[submodule "packages/pathable-utilities"]
+	path = packages/pathable-utilities
+	url = https://github.com/pathable/pathable-utilities.git
