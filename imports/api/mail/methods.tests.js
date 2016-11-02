@@ -16,7 +16,7 @@ describe('Mail Methods', () => {
       it('throws an error', () => {
         expect(() => {
           mailMethods.communityWelcome.run(params);
-        }).to.throw('User does not exist');
+        }).to.throw('User could not be found');
       });
     });
   });
@@ -28,7 +28,7 @@ describe('Mail Methods', () => {
       it('throwsx an error', () => {
         expect(() => {
           mailMethods.passwordReset.run(params);
-        }).to.throw('User does not exist');
+        }).to.throw('User could not be found');
       });
     });
   });

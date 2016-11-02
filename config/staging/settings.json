@@ -9,6 +9,8 @@
   "public": {
     "appHost": "staging.pathable.com",
     "adminHost": "admin.staging.pathable.com",
-    "filepickerKey": "ARv6lIAZ0QNi4ldM9AEXwz"
+    "emailDefaults": {
+      "from": "info@pathable.com"
+    }
   }
 }

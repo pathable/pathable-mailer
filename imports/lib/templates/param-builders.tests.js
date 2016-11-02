@@ -23,7 +23,7 @@ describe('Mail Methods', () => {
     it('throws an error on missing community', () => {
       expect(() => {
         authorizedUserParamBuilder({});
-      }).to.throw('Community could not be found');
+      }).to.throw('User could not be found');
     });
 
     describe('building params', () => {
