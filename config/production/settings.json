@@ -9,6 +9,8 @@
   "public": {
     "appHost": "pathable.meteorapp.com",
     "adminHost": "admin.ptbl.co",
-    "filepickerKey": "ARv6lIAZ0QNi4ldM9AEXwz"
+    "emailDefaults": {
+      "from": "info@pathable.com"
+    }
   }
 }

@@ -1,0 +1,12 @@
+[submodule "packages/pathable-collections"]
+	path = packages/pathable-collections
+	url = https://github.com/pathable/pathable-collections.git
+[submodule "packages/pathable-schema"]
+	path = packages/pathable-schema
+	url = https://github.com/pathable/pathable-schema.git
+[submodule "packages/pathable-utilities"]
+	path = packages/pathable-utilities
+	url = https://github.com/pathable/pathable-utilities.git
+[submodule "packages/pathable-htmltostring"]
+	path = packages/pathable-htmltostring
+	url = https://github.com/pathable/pathable-htmltostring.git

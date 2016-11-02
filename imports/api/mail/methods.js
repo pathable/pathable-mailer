@@ -3,11 +3,17 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { CommunityId as communityIdSchema, UserId as userIdSchema } from 'meteor/pathable-schema';
 
-import { authorizedUserParamBuilder } from './templates/param-builders';
-import userMailers from './mailers/users.js';
+import { authorizedUserParamBuilder } from '/imports/lib/templates/param-builders';
+import userMailers from '/imports/lib/mailers/users.js';
 
 /**
- * A method to change a users password.
+ * Send the first email to admin after community creation.
+ * Note that the community may not have been created along with the account
+ * since communities are created over time.
+ *
+ * @param {Object} params Parameters object
+ * @param {String} params.userId Id of the user to which we send the email
+ * @param {String} params.communityId Id of the specific community created
  */
 const communityWelcome = new ValidatedMethod({
   name: 'communityWelcome',
@@ -29,7 +35,7 @@ const communityWelcome = new ValidatedMethod({
 });
 
 /**
- * Sends a password recovery email to a user
+ * Sends a password recovery email to a user with auth link
  *
  * @param {Object} params Parameters object
  * @param {String} params.userId Id of the user to which we send the email

@@ -6,13 +6,16 @@
     "reinstall": "p-install -r",
     "update": "p-install -p",
     "start": "p-start",
+    "deploy": "p-deploy",
     "test": "p-start test",
     "app-test": "p-start app-test",
     "int-test": "p-start int-test",
+    "ci-test": "p-start ci-test",
     "lint": "eslint . --ext js,jsx",
     "pretest": "npm run lint --silent"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "dotenv": "^2.0.0",
     "meteor-node-stubs": "~0.2.0",
     "mjml": "^2.3.3"
@@ -30,6 +33,6 @@
     "eslint-plugin-react": "^4.3.0",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
-    "pathable-scripts": "https://github.com/pathable/pathable-scripts.git"
+    "pathable-scripts": "pathable/pathable-scripts"
   }
 }

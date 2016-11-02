@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: 4.4.7
+  environment:
+    PACKAGE_DIRS: ./packages
+dependencies:
+  override:
+    - curl https://install.meteor.com | /bin/sh
+    - npm run initialize
+    - npm run reinstall
+checkout:
+  post:
+    - git submodule update --init --remote --merge
+test:
+  override:
+    - npm run lint && npm run ci-test

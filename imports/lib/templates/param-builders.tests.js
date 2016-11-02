@@ -14,24 +14,25 @@ describe('Mail Methods', () => {
   describe('authorizedUserParamBuilder', () => {
     const methodParams = { userId: Random.id(), communityId: Random.id() };
     const email = 'some@mail.com';
-    const authToken = 'some-token';
+    const authToken = { token: 'some-token' };
     const firstName = 'firstName';
     const lastName = 'lastName';
     const adminHost = 'test.pathable.dev';
-    const authUrl = `//${adminHost}?authToken=${authToken}`;
+    const authUrl = `//${adminHost}?authToken=${authToken.token}`;
 
-    it('throws an error on missing user', () => {
+    it('throws an error on missing community', () => {
       expect(() => {
         authorizedUserParamBuilder({});
-      }).to.throw('Community could not be found');
+      }).to.throw('User could not be found');
     });
 
-    describe('getting details', () => {
+    describe('building params', () => {
       beforeEach(() => {
         stub(Users, 'findOne', () => ({
           _id: Random.id(),
           emails: [{ address: email }],
         }));
+
         stub(Communities, 'findOne', () => ({ adminHost: () => adminHost }));
       });
 
@@ -46,7 +47,7 @@ describe('Mail Methods', () => {
         }).to.throw('No person with the provided userId or communityId could be found');
       });
 
-      describe('with valid params', () => {
+      describe('with valid options', () => {
         beforeEach(() => {
           stub(Users, 'createLoginToken', () => authToken);
           stub(People, 'findOne', () => ({ firstName, lastName }));
@@ -57,7 +58,7 @@ describe('Mail Methods', () => {
           People.findOne.restore();
         });
 
-        it('gets user details and auth url', () => {
+        it('gets user first name, last name and auth url', () => {
           const results = authorizedUserParamBuilder(methodParams);
 
           results.should.have.property('authUrl', authUrl);
