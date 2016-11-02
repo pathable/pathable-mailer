@@ -9,6 +9,7 @@
     "test": "p-start test",
     "app-test": "p-start app-test",
     "int-test": "p-start int-test",
+    "ci-test": "p-start ci-test",
     "lint": "eslint . --ext js,jsx",
     "pretest": "npm run lint --silent"
   },

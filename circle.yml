@@ -13,4 +13,4 @@ checkout:
     - git submodule update --init --remote --merge
 test:
   override:
-    - npm run lint && meteor test --once --driver-package dispatch:mocha-phantomjs ./
+    - npm run lint && npm run ci-test
