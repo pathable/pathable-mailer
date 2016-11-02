@@ -6,6 +6,7 @@
     "reinstall": "p-install -r",
     "update": "p-install -p",
     "start": "p-start",
+    "deploy": "p-deploy",
     "test": "p-start test",
     "app-test": "p-start app-test",
     "int-test": "p-start int-test",
