@@ -51,8 +51,9 @@ const passwordReset = new ValidatedMethod({
       authUrl,
     } = authorizedUserParamBuilder(userId, communityId);
 
+    const subject = '[Pathable] Reset your password';
     const html = userMailers.passwordReset({ authUrl });
-    Email.send({ to, from, html });
+    Email.send({ subject, to, from, html });
   },
 });
 
