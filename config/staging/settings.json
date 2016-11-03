@@ -3,7 +3,8 @@
     "env": {
       "MONGO_URL": "mongodb://galaxy:hose30]aunts@aws-us-east-1-portal.22.dblayer.com:10291/staging",
       "MONGO_OPLOG_URL": "mongodb://oploguser:6sZjG-Mz6e4Gm-kkueil-lqd_t7Ppqj-cBjbzsQiDZE@haproxy290.aws-us-east-1-portal.21.dblayer.com:10290/local?authSource=admin&ssl=true",
-      "ROOT_URL": "http://admin.staging.pathable.com"
+      "ROOT_URL": "http://mailer.staging.pathable.com",
+      "MAIL_URL": "smtp://postmaster%40sandbox8717d798a9344c9bb16abd767d9769a0.mailgun.org:d97e1155b0286bc98b97dd57ce1c4e13@smtp.mailgun.org:587"
     }
   },
   "public": {
