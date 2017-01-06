@@ -38,9 +38,10 @@ const communityWelcome = new ValidatedMethod({
       authUrl,
     } = authorizedUserParamBuilder(userId, communityId);
 
+    const subject = '[Pathable] Welcome!';
     const html = userMailers.communityWelcome({ firstName, lastName, authUrl });
 
-    Email.send({ to, from, html });
+    Email.send({ subject, to, from, html });
   },
 });
 
@@ -63,6 +64,7 @@ const passwordReset = new ValidatedMethod({
 
     const subject = '[Pathable] Reset your password';
     const html = userMailers.passwordReset({ authUrl });
+    
     Email.send({ subject, to, from, html });
   },
 });
