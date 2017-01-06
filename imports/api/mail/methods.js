@@ -1,10 +1,20 @@
 import { Email } from 'meteor/email';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { CommunityId as communityIdSchema, UserId as userIdSchema } from 'meteor/pathable-schema';
 
 import { authorizedUserParamBuilder } from '/imports/lib/templates/param-builders';
 import userMailers from '/imports/lib/mailers/users.js';
+
+const communityUserSchema = new SimpleSchema({
+  userId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id,
+  },
+  communityId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id,
+  },
+});
 
 /**
  * Send the first email to admin after community creation.
@@ -17,7 +27,7 @@ import userMailers from '/imports/lib/mailers/users.js';
  */
 const communityWelcome = new ValidatedMethod({
   name: 'communityWelcome',
-  validate: new SimpleSchema([userIdSchema, communityIdSchema]).validator(),
+  validate: communityUserSchema.validator(),
 
   run({ userId, communityId }) {
     const {
@@ -42,7 +52,7 @@ const communityWelcome = new ValidatedMethod({
  */
 const passwordReset = new ValidatedMethod({
   name: 'passwordReset',
-  validate: new SimpleSchema([userIdSchema, communityIdSchema]).validator(),
+  validate: communityUserSchema.validator(),
 
   run({ userId, communityId }) {
     const {
@@ -58,4 +68,3 @@ const passwordReset = new ValidatedMethod({
 });
 
 export const mailMethods = { communityWelcome, passwordReset };
-
