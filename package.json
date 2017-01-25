@@ -2,7 +2,7 @@
   "name": "pathable-mailer",
   "private": true,
   "scripts": {
-    "initialize": "./initialize",
+    "preinstall": "./initialize",
     "reinstall": "p-install -r",
     "update": "p-install -p",
     "start": "p-start",
@@ -16,23 +16,18 @@
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
-    "dotenv": "^2.0.0",
-    "meteor-node-stubs": "~0.2.0",
-    "mjml": "^2.3.3"
+    "meteor-node-stubs": "~0.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "chai": "^3.5.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
-    "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0",
     "pathable-scripts": "pathable/pathable-scripts"
   }
 }

@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { expect } from 'meteor/pathable-vendor/chai';
 import MailTemplate from './template';
 
 

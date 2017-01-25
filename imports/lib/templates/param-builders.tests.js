@@ -1,7 +1,7 @@
-import { expect } from 'chai';
-import chai from 'chai';
-import { stub } from 'sinon';
-import sinonChai from 'sinon-chai';
+import { expect } from 'meteor/pathable-vendor/chai';
+import chai from 'meteor/pathable-vendor/chai';
+import { stub } from 'meteor/pathable-vendor/sinon';
+import sinonChai from 'meteor/pathable-vendor/sinon-chai';
 import { Random } from 'meteor/random';
 import { Users, People, Communities } from 'meteor/pathable-collections';
 
