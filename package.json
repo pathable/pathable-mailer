@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "preinstall": "./initialize",
+    "install": "p-install",
     "reinstall": "p-install -r",
     "update": "p-install -p",
     "start": "p-start",
