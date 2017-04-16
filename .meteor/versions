@@ -70,6 +70,7 @@ pathable-collections@0.0.1
 pathable-htmltostring@0.0.1
 pathable-schema@0.0.1
 pathable-utilities@0.0.1
+pathable-vendor@0.0.1
 percolate:migrations@0.7.6
 practicalmeteor:chai@2.1.0_1
 practicalmeteor:loglevel@1.2.0_2

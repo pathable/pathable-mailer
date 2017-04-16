@@ -1,6 +1,6 @@
-import { expect } from 'chai';
-import chai from 'chai';
-import sinonChai from 'sinon-chai';
+import { expect } from 'meteor/pathable-vendor/chai';
+import chai from 'meteor/pathable-vendor/chai';
+import sinonChai from 'meteor/pathable-vendor/sinon-chai';
 
 import * as userMailer from './users';
 

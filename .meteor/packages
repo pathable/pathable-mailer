@@ -22,8 +22,9 @@ dispatch:mocha-browser
 dispatch:mocha-phantomjs
 meteorhacks:cluster
 meteorhacks:ssr
+shell-server
 
 pathable-collections
 pathable-schema
 pathable-utilities
-shell-server
+pathable-vendor
