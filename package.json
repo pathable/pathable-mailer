@@ -9,11 +9,13 @@
     "start": "p-start",
     "deploy": "p-deploy",
     "test": "p-start test",
+    "test-package": "p-start packages-test",
     "app-test": "p-start app-test",
     "int-test": "p-start int-test",
     "ci-test": "p-start ci-test",
     "lint": "eslint . --ext js,jsx",
-    "pretest": "npm run lint --silent"
+    "pretest": "npm run lint --silent",
+    "prepare-deps": "p-prepare -p"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
@@ -35,6 +37,6 @@
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
-    "pathable-scripts": "pathable/pathable-scripts"
+    "pathable-scripts": "https://github.com/pathable/pathable-scripts.git#ci-test"
   }
 }
