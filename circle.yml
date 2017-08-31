@@ -16,3 +16,16 @@ checkout:
 test:
   override:
     - npm run lint && meteor test-packages --once --driver-package dispatch:mocha-phantomjs ./
+deployment:
+  staging:
+    branch: "development"
+    commands:
+      - echo $STAGING_SETTINGS > settings-staging.json
+      - echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy mailer.staging.pathable.com --settings settings-staging.json  
+  production:
+    branch: "master"
+    commands:
+      - echo $PROD_SETTINGS > settings-production.json
+      - echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy mailer.pathable.co --settings settings-production.json
