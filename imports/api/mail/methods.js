@@ -64,7 +64,7 @@ const passwordReset = new ValidatedMethod({
 
     const subject = '[Pathable] Reset your password';
     const html = userMailers.passwordReset({ authUrl });
-    
+
     Email.send({ subject, to, from, html });
   },
 });
