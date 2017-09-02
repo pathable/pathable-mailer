@@ -1,4 +1,2 @@
-development/*
-!development/.gitkeep
 test/*
 !test/.gitkeep
