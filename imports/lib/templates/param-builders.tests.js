@@ -18,7 +18,7 @@ describe('Mail Methods', () => {
     const firstName = 'firstName';
     const lastName = 'lastName';
     const adminHost = 'test.pathable.dev';
-    const authUrl = `//${adminHost}?authToken=${authToken.token}`;
+    const authUrl = `http://${adminHost}?authToken=${authToken.token}`;
 
     it('throws an error on missing community', () => {
       expect(() => {
