@@ -24,6 +24,7 @@ meteorhacks:ssr
 shell-server
 
 pathable-collections
+pathable-styles
 pathable-schema
 pathable-utilities
 pathable-vendor
