@@ -1,7 +1,10 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb://galaxy:fYb7wK9F@aws-us-east-1-portal.23.dblayer.com:16634/pathable",
+      "MONGO_URL":
+        "mongodb://dbuser:34fsd23rfg@ds141914-a0.mlab.com:41914,ds141914-a1.mlab.com:41914/pathable?replicaSet=rs-ds141914",
+      "MONGO_OPLOG_URL":
+        "mongodb://oplog-reader:34hfdffse4685@ds141914-a0.mlab.com:41914,ds141914-a1.mlab.com:41914/local?replicaSet=rs-ds141914&authSource=admin",
       "ROOT_URL": "http://mailer.pathable.co",
       "MAIL_URL": "smtp://galaxy:KMY-ag6-nbQ-2CJ@smtp.mailgun.org:587"
     }
