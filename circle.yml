@@ -18,7 +18,7 @@ test:
     - npm run lint && meteor test --once --driver-package dispatch:mocha-phantomjs ./
 deployment:
   staging:
-    branch: "master"
+    branch: "development"
     commands:
       - export TOOL_NODE_FLAGS="--max-old-space-size=2048"
       - echo $STAGING_SETTINGS > settings-staging.json
