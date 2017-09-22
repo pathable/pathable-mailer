@@ -15,7 +15,8 @@
     "ci-test": "p-start ci-test",
     "lint": "eslint . --ext js,jsx",
     "pretest": "npm run lint --silent",
-    "prepare-deps": "p-prepare -p"
+    "prepare-deps": "p-prepare -p",
+    "for": "p-for"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
