@@ -2,8 +2,6 @@
   "name": "pathable-mailer",
   "private": true,
   "scripts": {
-    "preinstall": "./initialize",
-    "install": "p-install",
     "reinstall": "p-install -r",
     "update": "p-install -p",
     "start": "p-start",
@@ -39,6 +37,6 @@
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
-    "pathable-scripts": "https://github.com/pathable/pathable-scripts.git"
+    "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git"
   }
 }
