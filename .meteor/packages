@@ -22,11 +22,13 @@ dispatch:mocha-phantomjs
 meteorhacks:cluster
 meteorhacks:ssr
 shell-server@0.3.0
+dynamic-import
 
-pathable-collections
-pathable-styles
-pathable-schema
-pathable-utilities
+
+# Pathable dependencies. The order is important.
 pathable-vendor
 pathable-collection2-core
-dynamic-import
+pathable-utilities
+pathable-schema
+pathable-styles
+pathable-collections
