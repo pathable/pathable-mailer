@@ -1,6 +1,5 @@
-import { expect } from 'meteor/pathable-vendor/chai';
-import chai from 'meteor/pathable-vendor/chai';
-import sinonChai from 'meteor/pathable-vendor/sinon-chai';
+import chai, { expect } from 'chai';
+import sinonChai from 'sinon-chai';
 import { Random } from 'meteor/random';
 
 import { mailMethods } from './methods';

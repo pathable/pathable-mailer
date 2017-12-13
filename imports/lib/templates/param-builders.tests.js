@@ -1,8 +1,8 @@
-import { expect } from 'meteor/pathable-vendor/chai';
-import chai from 'meteor/pathable-vendor/chai';
-import { stub } from 'meteor/pathable-vendor/sinon';
-import sinonChai from 'meteor/pathable-vendor/sinon-chai';
+import chai, { expect } from 'chai';
+import sinonChai from 'sinon-chai';
+import { stub } from 'sinon';
 import { Random } from 'meteor/random';
+
 import { Users, People, Communities } from 'meteor/pathable-collections';
 
 import { authorizedUserParamBuilder } from './param-builders';
@@ -12,6 +12,7 @@ chai.use(sinonChai);
 
 describe('Mail Methods', () => {
   describe('authorizedUserParamBuilder', () => {
+    const accountId = Random.id();
     const methodParams = { userId: Random.id(), communityId: Random.id() };
     const email = 'some@mail.com';
     const authToken = { token: 'some-token' };
@@ -28,12 +29,15 @@ describe('Mail Methods', () => {
 
     describe('building params', () => {
       beforeEach(() => {
-        stub(Users, 'findOne', () => ({
+        stub(Users, 'findOne').callsFake(() => ({
           _id: Random.id(),
           emails: [{ address: email }],
         }));
 
-        stub(Communities, 'findOne', () => ({ adminHost: () => adminHost }));
+        stub(Communities, 'findOne').callsFake(() => ({
+          adminHost: () => adminHost,
+          account: () => ({ _id: accountId }),
+        }));
       });
 
       afterEach(() => {
@@ -49,8 +53,8 @@ describe('Mail Methods', () => {
 
       describe('with valid options', () => {
         beforeEach(() => {
-          stub(Users, 'createLoginToken', () => authToken);
-          stub(People, 'findOne', () => ({ firstName, lastName }));
+          stub(Users, 'createLoginToken').callsFake(() => authToken);
+          stub(People, 'findOne').callsFake(() => ({ firstName, lastName }));
         });
 
         afterEach(() => {

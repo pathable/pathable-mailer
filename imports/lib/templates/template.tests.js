@@ -1,6 +1,5 @@
-import { expect } from 'meteor/pathable-vendor/chai';
+import { expect } from 'chai';
 import MailTemplate from './template';
-
 
 if (Meteor.isServer) {
   describe('Renderer', () => {
