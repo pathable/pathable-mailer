@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "meteor/*": ["../pathable-packages/packages/*"]
+    }
+  },
+  "exclude": [".meteor", "node_modules"]
+}
