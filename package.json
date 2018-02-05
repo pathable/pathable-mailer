@@ -17,26 +17,39 @@
     "prepare-deps": "p-prepare -p"
   },
   "dependencies": {
-    "babel-runtime": "^6.18.0",
+    "babel-runtime": "^6.26.0",
     "bcrypt": "^0.8.7",
-    "meteor-node-stubs": "^0.2.11",
+    "chai": "^4.1.2",
     "dotenv": "^2.0.0",
-    "mjml": "^2.3.3",
+    "meteor-node-stubs": "^0.2.11",
+    "mjml": "^3.3.5",
     "react": "^15.4.2",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-form": "^6.4.3"
+    "redux-form": "^6.4.3",
+    "sinon": "^4.1.3",
+    "sinon-chai": "^2.14.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
+    "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-datetime": "^1.4.1",
+    "chai-enzyme": "^0.4.2",
+    "chai-string": "^1.3.0",
+    "chai-subset": "^1.3.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
-    "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git"
+    "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
   }
 }

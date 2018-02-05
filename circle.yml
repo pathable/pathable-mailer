@@ -1,18 +1,18 @@
 machine:
   node:
-    version: 4.6.2
+    version: 8.8.1
   environment:
-    METEOR_PACKAGE_DIRS: ./packages
+    METEOR_PACKAGE_DIRS: "${HOME}/pathable-packages/packages"
     TOOL_NODE_FLAGS: --max-old-space-size=2048
 dependencies:
+  cache_directories:
+    - "~/.npm"
+    - "~/.meteor"
   override:
     - curl https://install.meteor.com | /bin/sh
-    - npm run install
+    - npm install
     - npm run prepare-deps
-    - npm run reinstall
-checkout:
-  post:
-#    - git submodule update --init --remote --merge
+    - cd ../pathable-packages && find packages* -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && meteor npm install" \;
 test:
   override:
-    - npm run lint && meteor test --settings ./config/test/settings.json --once --driver-package dispatch:mocha-phantomjs ./
+    - npm run lint && npm run ci-test ./
