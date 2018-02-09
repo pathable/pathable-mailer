@@ -14,7 +14,8 @@
     "ci-test": "p-start ci-test",
     "lint": "eslint . --ext js,jsx",
     "pretest": "npm run lint --silent",
-    "prepare-deps": "p-prepare -p"
+    "prepare-deps": "p-prepare -p",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -45,10 +46,16 @@
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-meteor": "3.0.1",
     "eslint-plugin-react": "^4.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
     "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git",
+    "prettier": "1.10.2",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["prettier --single-quote --write", "eslint --fix", "eslint", "git add"]
   }
 }
