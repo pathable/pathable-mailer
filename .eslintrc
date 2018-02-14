@@ -1,16 +1,15 @@
 {
   "extends": ["airbnb"],
   "quotes": [2, "single", "avoid-escape"],
-  "plugins": [
-    "meteor"
-  ],
+  "plugins": ["meteor"],
   "env": {
     "meteor": true,
     "node": true,
     "mocha": true
   },
   "rules": {
-    "react/prefer-es6-class": 0
+    "react/prefer-es6-class": 0,
+    "max-len": ["error", 100, 2, { "ignorePattern": "(from '.*'|\\`.*\\`)" }]
   },
   "parser": "babel-eslint",
   "parserOptions": {
