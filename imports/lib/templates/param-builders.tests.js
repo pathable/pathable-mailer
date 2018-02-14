@@ -48,7 +48,9 @@ describe('Mail Methods', () => {
       it('throws an error on missing person', () => {
         expect(() => {
           authorizedUserParamBuilder(methodParams);
-        }).to.throw('No person with the provided userId or communityId could be found');
+        }).to.throw(
+          'No person with the provided userId or communityId could be found'
+        );
       });
 
       describe('with valid options', () => {

@@ -56,11 +56,10 @@ const passwordReset = new ValidatedMethod({
   validate: communityUserSchema.validator(),
 
   run({ userId, communityId }) {
-    const {
-      from,
-      to,
-      authUrl,
-    } = authorizedUserParamBuilder(userId, communityId);
+    const { from, to, authUrl } = authorizedUserParamBuilder(
+      userId,
+      communityId
+    );
 
     const subject = '[Pathable] Reset your password';
     const html = userMailers.passwordReset({ authUrl });
