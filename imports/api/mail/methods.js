@@ -2,8 +2,8 @@ import { Email } from 'meteor/email';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import SimpleSchema from 'meteor/pathable-vendor/simpl-schema';
 
-import { authorizedUserParamBuilder } from '/imports/lib/templates/param-builders';
-import userMailers from '/imports/lib/mailers/users.js';
+import { authorizedUserParamBuilder } from 'imports/lib/templates/param-builders';
+import userMailers from 'imports/lib/mailers/users.js';
 
 const communityUserSchema = new SimpleSchema({
   userId: {

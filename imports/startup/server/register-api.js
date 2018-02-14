@@ -1,1 +1,1 @@
-import '/imports/api/mail/methods.js';
+import 'imports/api/mail/methods.js';

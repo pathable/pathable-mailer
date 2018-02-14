@@ -1,4 +1,4 @@
-import MailTemplate from '/imports/lib/templates/template';
+import MailTemplate from 'imports/lib/templates/template';
 
 const passwordReset = ({ authUrl }) => {
   const template = new MailTemplate('templates/accounts/password-reset.mjml');
