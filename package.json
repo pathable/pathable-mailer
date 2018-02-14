@@ -32,7 +32,7 @@
     "sinon-chai": "^2.14.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^8.2.1",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
@@ -41,11 +41,9 @@
     "chai-enzyme": "^0.4.2",
     "chai-string": "^1.3.0",
     "chai-subset": "^1.3.0",
-    "eslint": "^2.8.0",
-    "eslint-config-airbnb": "^6.2.0",
-    "eslint-plugin-import": "^1.5.0",
-    "eslint-plugin-meteor": "3.0.1",
-    "eslint-plugin-react": "^4.3.0",
+    "eslint": "^4.17.0",
+    "eslint-config-pathable":
+      "git+https://github.com/pathable/pathable-eslint-config",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
     "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git",
