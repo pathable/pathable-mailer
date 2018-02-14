@@ -56,6 +56,6 @@
     "sinon-chai": "^2.8.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --single-quote --write", "eslint --fix", "eslint", "git add"]
+    "*.{js,jsx}": ["prettier --write", "eslint --fix", "eslint", "git add"]
   }
 }
