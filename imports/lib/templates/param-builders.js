@@ -3,11 +3,15 @@ import { Users, Communities, People } from 'meteor/pathable-collections';
 
 export const authorizedUserParamBuilder = (userId, communityId) => {
   const user = Users.findOne(userId);
-  if (!user) throw new Meteor.Error('not-found', 'User could not be found', { userId });
+  if (!user) {
+    throw new Meteor.Error('not-found', 'User could not be found', { userId });
+  }
 
   const community = Communities.findOne(communityId);
   if (!community) {
-    throw new Meteor.Error('not-found', 'Community could not be found ', { communityId });
+    throw new Meteor.Error('not-found', 'Community could not be found ', {
+      communityId,
+    });
   }
 
   const { _id: accountId } = community.account();

@@ -2,7 +2,6 @@ import { mjml2html } from 'meteor/pathable-vendor/mjml';
 import { SSR, Template } from 'meteor/meteorhacks:ssr';
 
 export default class MailTemplate {
-
   constructor(fileName) {
     this.fileName = fileName;
     this.template = Assets.getText(fileName);
