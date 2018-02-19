@@ -40,8 +40,7 @@
     "chai-string": "^1.3.0",
     "chai-subset": "^1.3.0",
     "eslint": "^4.17.0",
-    "eslint-config-pathable":
-      "git+https://github.com/pathable/pathable-eslint-config",
+    "eslint-config-pathable": "git+https://github.com/pathable/pathable-eslint-config",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
     "pathable-scripts": "git+https://github.com/pathable/pathable-scripts.git",
@@ -52,6 +51,11 @@
     "sinon-chai": "^2.8.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --write", "eslint --fix", "eslint", "git add"]
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "eslint",
+      "git add"
+    ]
   }
 }
